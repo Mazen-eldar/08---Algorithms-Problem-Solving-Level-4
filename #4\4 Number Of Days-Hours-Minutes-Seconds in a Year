@@ -1,0 +1,71 @@
+#include <iostream>
+
+using namespace std;
+
+bool isLeapYear(short Year)
+{
+	// if year is divisible by 4 AND not divisible by 100
+	// OR if year is divisible by 400
+	// then it is a leap year
+	return (Year % 4 == 0 && Year % 100 != 0) || (Year % 400 ==0);
+
+}
+
+
+short ReadYear()
+{
+	short Year;
+
+	cout << "\nPlease enter a year to check? ";
+	cin >> Year;
+
+	return Year;
+}
+
+short NumberOfDaysInAYear(short Year)
+{
+	return isLeapYear(Year) ? 366 : 365;
+}
+
+short NumberOfHoursInAYear(short Year)
+{
+	return NumberOfDaysInAYear(Year) * 24 ;
+}
+
+int NumberOfMinutesInAYear(short Year)
+{
+	return NumberOfHoursInAYear(Year) * 60;
+}
+
+int NumberOfSecondsInAYear(short Year)
+{
+	return NumberOfMinutesInAYear(Year) * 60;
+}
+
+void DataOfYears(short Year)
+{
+	short Days = NumberOfDaysInAYear(Year);
+	short Hours = NumberOfHoursInAYear(Year);
+	int Minutes = NumberOfMinutesInAYear(Year);
+	int Seconds = NumberOfSecondsInAYear(Year);
+
+	cout << "Number of Days In Year [" << Year << "] is " << Days << endl;
+	cout << "Number of Hours In Year [" << Year << "] is " << Hours << endl;
+	cout << "Number of Minutes In Year [" << Year << "] is " << Minutes << endl;
+	cout << "Number of Seconds In Year [" << Year << "] is " << Seconds << endl;
+
+
+
+
+
+}
+
+int main()
+{
+	short Year = ReadYear();
+	
+	DataOfYears(Year);
+
+	system("pause>0");
+	return 0;
+}
