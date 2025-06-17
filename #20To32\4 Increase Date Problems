@@ -183,8 +183,8 @@ stDate IncreaseDateByXDecadesFaster(short Decade, stDate Date)
 
 stDate IncreaseDateByOneCentury(stDate Date)
 {
-	//Period of 1000 years 
-	Date.Year += 1000; 
+	//Period of 100 years 
+	Date.Year += 100; 
 	return Date;
 
 }
